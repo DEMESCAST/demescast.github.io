@@ -97,13 +97,10 @@ nav {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    text-align: center;
     padding-top: 64px;
     background: #0f0f15;
-    background-image:
-        radial-gradient(ellipse 80% 60% at 50% 40%, rgba(60, 180, 255, 0.08) 0%, transparent 100%),
-        radial-gradient(ellipse 60% 50% at 80% 80%, rgba(60, 180, 255, 0.04) 0%, transparent 100%);
     position: relative;
+    overflow: hidden;
 }
 
 .hero-logo {
@@ -112,19 +109,22 @@ nav {
     border-radius: 16px;
 }
 
-.hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(15, 15, 25, 0.3);
-}
-
-.hero .container {
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 40px;
     position: relative;
     z-index: 1;
+    min-height: calc(100vh - 64px);
 }
 
-.hero h1 {
+.hero-content {
+    text-align: left;
+    padding: 60px 0;
+}
+
+.hero-content h1 {
     font-size: 72px;
     font-weight: 900;
     color: #3cb4ff;
@@ -132,22 +132,71 @@ nav {
     margin-bottom: 16px;
 }
 
-.hero-sub {
+.hero-content .hero-sub {
     font-size: 20px;
     color: #fff;
     margin-bottom: 8px;
 }
 
-.hero-apresentam {
+.hero-content .hero-apresentam {
     font-size: 16px;
     color: #fff;
     margin-bottom: 32px;
 }
 
-.hero-links {
+.hero-content .hero-links {
     display: flex;
     gap: 16px;
-    justify-content: center;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+.btn-hero {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 40px;
+    background: #3cb4ff;
+    color: #0f0f15;
+    font-weight: 800;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all .2s;
+    box-shadow: 0 4px 20px rgba(60, 180, 255, 0.3);
+}
+
+.btn-hero:hover {
+    background: #5cc4ff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 30px rgba(60, 180, 255, 0.4);
+}
+
+.btn-hero i {
+    font-size: 18px;
+}
+
+.hero-image {
+    position: relative;
+    height: calc(100vh - 64px);
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, #0f0f15 0%, transparent 30%);
 }
 
 .btn {
@@ -278,6 +327,12 @@ nav {
     color: inherit;
     overflow: hidden;
     break-inside: avoid;
+    animation: fadeUp .5s ease both;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .ep-thumb {
@@ -308,10 +363,23 @@ nav {
     margin-bottom: 8px;
 }
 
-.ep-card p {
-    color: #888;
-    font-size: 14px;
-    margin-bottom: 16px;
+.ep-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.ep-data {
+    color: #666;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.ep-data i {
+    font-size: 12px;
 }
 
 .ep-card .ep-link {
@@ -389,23 +457,39 @@ footer {
         padding: 0 16px;
     }
 
-    .hero h1 {
+    .hero-container {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .hero-content {
+        text-align: center;
+        padding: 40px 0;
+    }
+
+    .hero-content h1 {
         font-size: 32px;
         letter-spacing: 2px;
     }
 
-    .hero-sub {
+    .hero-content .hero-sub {
         font-size: 14px;
     }
 
-    .hero-apresentam {
+    .hero-content .hero-apresentam {
         font-size: 13px;
     }
 
-    .hero-links {
+    .hero-content .hero-links {
         flex-direction: column;
         align-items: center;
         gap: 12px;
+    }
+
+    .hero-image {
+        height: 400px;
+        order: -1;
+        border-radius: 8px;
     }
 
     .btn {
