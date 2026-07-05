@@ -1,5 +1,6 @@
 const leagues = [
     { code: 'BSA', name: 'Brasileirão' },
+    { code: 'BSB', name: 'Série B' },
 ];
 
 async function fetchJogos() {
