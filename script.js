@@ -1,7 +1,7 @@
 const episodios = [
-    { num: "EP.59", titulo: "SUZANE BORGES", desc: "Bate-papo com a empresária e especialista em turismo Suzane Borges, proprietária da agência Tairú.", link: "https://www.youtube.com/watch?v=PGOIE_d81jc" },
-    { num: "EP.44", titulo: "DÉBORA FACCHINETTI", desc: "A escritora Débora Facchinetti retorna ao podcast para falar sobre o lançamento do seu novo livro.", link: "https://www.youtube.com/watch?v=FbkRgjKvisM" },
-    { num: "EP.27", titulo: "DRIELLE BERTO E MARCOS VINÍCIUS", desc: "Uma conversa esclarecedora sobre a Doença de Crohn com dois convidados especiais.", link: "https://www.youtube.com/watch?v=zStjlP39tfI" },
+    { num: "EP.59", titulo: "SUZANE BORGES", desc: "Bate-papo com a empresária e especialista em turismo Suzane Borges, proprietária da agência Tairú.", link: "https://www.youtube.com/watch?v=PGOIE_d81jc", thumb: "https://img.youtube.com/vi/PGOIE_d81jc/hqdefault.jpg" },
+    { num: "EP.44", titulo: "DÉBORA FACCHINETTI", desc: "A escritora Débora Facchinetti retorna ao podcast para falar sobre o lançamento do seu novo livro.", link: "https://www.youtube.com/watch?v=FbkRgjKvisM", thumb: "https://img.youtube.com/vi/FbkRgjKvisM/hqdefault.jpg" },
+    { num: "EP.27", titulo: "DRIELLE BERTO E MARCOS VINÍCIUS", desc: "Uma conversa esclarecedora sobre a Doença de Crohn com dois convidados especiais.", link: "https://www.youtube.com/watch?v=zStjlP39tfI", thumb: "https://img.youtube.com/vi/zStjlP39tfI/hqdefault.jpg" },
 ];
 
 const grid = document.getElementById('episodios-grid');
@@ -12,6 +12,7 @@ episodios.forEach(ep => {
     card.target = '_blank';
     card.className = 'ep-card';
     card.innerHTML = `
+        <div class="ep-thumb" style="background-image: url('${ep.thumb}')"></div>
         <div class="ep-num">${ep.num}</div>
         <h3>${ep.titulo}</h3>
         <p>${ep.desc}</p>
