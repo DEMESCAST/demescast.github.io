@@ -50,14 +50,14 @@ nav {
 
 .nav-links {
     display: flex;
-    gap: 40px;
+    gap: 20px;
     list-style: none;
 }
 
 .nav-links a {
     color: #999;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -71,6 +71,7 @@ nav {
 .nav-right {
     display: flex;
     align-items: center;
+    gap: 80px;
 }
 
 .nav-social {
