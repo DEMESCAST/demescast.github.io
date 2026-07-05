@@ -1,5 +1,6 @@
 const episodios = [
     { num: "EP.59", titulo: "SUZANE BORGES", desc: "Bate-papo com a empresária e especialista em turismo Suzane Borges, proprietária da agência Tairú.", link: "https://www.youtube.com/watch?v=PGOIE_d81jc", thumb: "https://img.youtube.com/vi/PGOIE_d81jc/hqdefault.jpg" },
+    { num: "EP.49", titulo: "ALLINE VASCONCELOS", desc: "Bate-papo com a influenciadora e jornalista Alline Vasconcelos sobre os assuntos mais comentados do momento.", link: "https://www.youtube.com/watch?v=bOxzCcRePlU", thumb: "https://img.youtube.com/vi/bOxzCcRePlU/hqdefault.jpg" },
     { num: "EP.44", titulo: "DÉBORA FACCHINETTI", desc: "A escritora Débora Facchinetti retorna ao podcast para falar sobre o lançamento do seu novo livro.", link: "https://www.youtube.com/watch?v=FbkRgjKvisM", thumb: "https://img.youtube.com/vi/FbkRgjKvisM/hqdefault.jpg" },
     { num: "EP.27", titulo: "DRIELLE BERTO E MARCOS VINÍCIUS", desc: "Uma conversa esclarecedora sobre a Doença de Crohn com dois convidados especiais.", link: "https://www.youtube.com/watch?v=zStjlP39tfI", thumb: "https://img.youtube.com/vi/zStjlP39tfI/hqdefault.jpg" },
 ];
