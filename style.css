@@ -284,6 +284,20 @@ nav {
     text-align: center;
 }
 
+.video-embed {
+    max-width: 800px;
+    margin: 0 auto 28px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.video-embed iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    display: block;
+}
+
 .live-badge {
     display: inline-block;
     background: #dc3545;
@@ -462,6 +476,15 @@ nav {
 
 .ep-card .ep-link:hover {
     text-decoration: underline;
+}
+
+.episodios-footer {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.episodios-footer .btn i {
+    margin-right: 8px;
 }
 
 /* Contato */
