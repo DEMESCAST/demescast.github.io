@@ -299,25 +299,34 @@ nav {
     text-align: center;
     max-width: 600px;
     margin: 0 auto;
+}
+
+.contato-intro {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #ccc;
+}
+
+.contato-links {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 12px 24px;
 }
 
-.contato-info p {
+.contato-links p {
     margin: 0;
     font-size: 16px;
 }
 
-.contato-info i {
+.contato-links i {
     width: 20px;
     text-align: center;
     color: #3cb4ff;
     font-size: 18px;
 }
 
-.contato-info a {
+.contato-links a {
     color: #3cb4ff;
     text-decoration: none;
 }
