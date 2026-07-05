@@ -100,6 +100,9 @@ nav {
     text-align: center;
     padding-top: 64px;
     background: #0f0f15;
+    background-image:
+        radial-gradient(ellipse 80% 60% at 50% 40%, rgba(60, 180, 255, 0.08) 0%, transparent 100%),
+        radial-gradient(ellipse 60% 50% at 80% 80%, rgba(60, 180, 255, 0.04) 0%, transparent 100%);
     position: relative;
 }
 
@@ -113,15 +116,7 @@ nav {
     content: '';
     position: absolute;
     inset: 0;
-    background: url('hero-bg.jpg') center top / cover no-repeat;
-    opacity: 0.25;
-}
-
-.hero::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(15, 15, 21, 0.6);
+    background: rgba(15, 15, 25, 0.3);
 }
 
 .hero .container {
