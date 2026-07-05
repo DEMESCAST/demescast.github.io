@@ -74,6 +74,12 @@ nav {
     position: relative;
 }
 
+.hero-logo {
+    max-width: 200px;
+    margin-bottom: 24px;
+    border-radius: 16px;
+}
+
 .hero::before {
     content: '';
     position: absolute;
