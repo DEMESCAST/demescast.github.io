@@ -1,5 +1,3 @@
-const FOOTBALL_API_KEY = 'ea7017ad5fee423aba954573c238e31c'; // https://football-data.org/client/register
-
 const leagues = [
     { code: 'BSA', name: 'Brasileirão' },
     { code: 'PL', name: 'Premier League' },
@@ -11,26 +9,17 @@ const leagues = [
 
 async function fetchJogos() {
     const grid = document.getElementById('pitch-grid');
-    if (FOOTBALL_API_KEY === 'SUA_CHAVE_AQUI') {
-        grid.innerHTML = `<div class="pitch-empty">
-            <p style="margin-bottom:12px;font-size:14px;">🔑 Configure sua chave da API football-data.org</p>
-            <p style="font-size:13px;color:rgba(255,255,255,0.4);">1. Acesse <a href="https://www.football-data.org/client/register" target="_blank" style="color:#3cb4ff;">football-data.org/client/register</a> e cadastre-se (grátis)</p>
-            <p style="font-size:13px;color:rgba(255,255,255,0.4);">2. Copie sua chave e substitua "SUA_CHAVE_AQUI" no script.js</p>
-        </div>`;
-        return;
-    }
 
     try {
-        const proxy = 'https://corsproxy.io/?';
-        const url = `https://api.football-data.org/v4/matches?api_key=${FOOTBALL_API_KEY}`;
-        const res = await fetch(proxy + encodeURIComponent(url), {
-            headers: { 'Accept': 'application/json' }
-        });
-        if (!res.ok) throw new Error(`Erro ${res.status}`);
+        const res = await fetch('jogos-data.json');
+        if (!res.ok) throw new Error('Aguardando dados...');
         const data = await res.json();
         renderJogos(data.matches || []);
     } catch (e) {
-        grid.innerHTML = `<div class="pitch-empty">Erro ao carregar jogos: ${e.message}. <button onclick="fetchJogos()" style="background:#3cb4ff;color:#0f0f15;border:none;padding:8px 16px;border-radius:6px;cursor:pointer;font-weight:600;margin-top:8px;">Tentar novamente</button></div>`;
+        grid.innerHTML = `<div class="pitch-empty">
+            <p style="margin-bottom:8px;font-size:15px;color:rgba(255,255,255,0.6);">🏟️ Jogos serão carregados em instantes...</p>
+            <p style="font-size:13px;color:rgba(255,255,255,0.3);">A primeira busca pode levar até 2 minutos</p>
+        </div>`;
     }
 }
 

@@ -1,0 +1,26 @@
+name: Buscar Jogos
+
+on:
+  schedule:
+    - cron: '0 */2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Buscar jogos da API
+        run: |
+          curl -s "https://api.football-data.org/v4/matches?api_key=ea7017ad5fee423aba954573c238e31c" \
+            -H "Accept: application/json" -o jogos-data.json
+      - name: Commitar se houver mudancas
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add jogos-data.json
+          git diff --cached --quiet || git commit -m "Atualiza jogos-data.json [automated]"
+          git push
