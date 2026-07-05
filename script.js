@@ -1,4 +1,4 @@
-const FOOTBALL_API_KEY = 'SUA_CHAVE_AQUI'; // https://football-data.org/client/register
+const FOOTBALL_API_KEY = 'ea7017ad5fee423aba954573c238e31c'; // https://football-data.org/client/register
 
 const leagues = [
     { code: 'BSA', name: 'Brasileirão' },
