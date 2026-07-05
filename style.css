@@ -307,6 +307,66 @@ nav {
     margin-bottom: 24px;
 }
 
+/* Shorts */
+.shorts-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.short-card {
+    display: block;
+    background: #0f0f15;
+    border: 1px solid rgba(60, 180, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: all .2s;
+    animation: fadeUp .5s ease both;
+}
+
+.short-card:hover {
+    border-color: rgba(60, 180, 255, 0.4);
+    transform: translateY(-4px);
+}
+
+.short-thumb {
+    position: relative;
+    aspect-ratio: 9 / 16;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.short-play {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(60, 180, 255, 0.9);
+    color: #0f0f15;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: all .2s;
+    opacity: 0;
+}
+
+.short-card:hover .short-play {
+    opacity: 1;
+}
+
+.short-card h3 {
+    font-size: 14px;
+    color: #fff;
+    padding: 12px;
+    text-align: center;
+    font-weight: 600;
+}
+
 /* Episódios */
 .episodios-grid {
     display: grid;
@@ -516,6 +576,10 @@ footer {
 
     .episodios-grid {
         grid-template-columns: 1fr;
+    }
+
+    .shorts-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .ep-thumb {
