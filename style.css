@@ -17,7 +17,7 @@ body {
 }
 
 .container {
-    max-width: 1800px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 24px;
 }
@@ -311,14 +311,14 @@ nav {
 .shorts-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    gap: 16px;
 }
 
 .short-card {
     display: block;
     background: #0f0f15;
     border: 1px solid rgba(60, 180, 255, 0.1);
-    border-radius: 12px;
+    border-radius: 10px;
     overflow: hidden;
     text-decoration: none;
     color: inherit;
@@ -333,24 +333,25 @@ nav {
 
 .short-thumb {
     position: relative;
-    aspect-ratio: 9 / 16;
+    aspect-ratio: 3 / 4;
     background-size: cover;
     background-position: center;
+    background-color: #0f0f15;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .short-play {
-    width: 48px;
-    height: 48px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     background: rgba(60, 180, 255, 0.9);
     color: #0f0f15;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 18px;
+    font-size: 14px;
     transition: all .2s;
     opacity: 0;
 }
@@ -360,9 +361,9 @@ nav {
 }
 
 .short-card h3 {
-    font-size: 14px;
+    font-size: 12px;
     color: #fff;
-    padding: 12px;
+    padding: 8px;
     text-align: center;
     font-weight: 600;
 }
@@ -371,15 +372,15 @@ nav {
 .episodios-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    gap: 16px;
 }
 
 .ep-card {
     display: block;
     background: #1a1a24;
     border: 1px solid rgba(60, 180, 255, 0.1);
-    border-radius: 12px;
-    padding: 24px;
+    border-radius: 10px;
+    padding: 16px;
     padding-top: 0;
     transition: all .2s;
     cursor: pointer;
@@ -396,9 +397,9 @@ nav {
 }
 
 .ep-thumb {
-    width: calc(100% + 48px);
-    margin: 0 0 16px -24px;
-    height: 220px;
+    width: calc(100% + 32px);
+    margin: 0 0 10px -16px;
+    aspect-ratio: 16 / 9;
     background-size: cover;
     background-position: center;
 }
@@ -410,42 +411,49 @@ nav {
 
 .ep-card .ep-num {
     color: #3cb4ff;
-    font-size: 13px;
+    font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 8px;
+    letter-spacing: 1.5px;
+    margin-bottom: 6px;
 }
 
 .ep-card h3 {
-    font-size: 18px;
+    font-size: 15px;
     color: #fff;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
+}
+
+.ep-card p {
+    color: #888;
+    font-size: 12px;
+    margin-bottom: 0;
+    line-height: 1.4;
 }
 
 .ep-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 16px;
+    margin-top: 12px;
 }
 
 .ep-data {
     color: #666;
-    font-size: 13px;
+    font-size: 11px;
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 4px;
 }
 
 .ep-data i {
-    font-size: 12px;
+    font-size: 10px;
 }
 
 .ep-card .ep-link {
     color: #3cb4ff;
     font-weight: 600;
-    font-size: 13px;
+    font-size: 11px;
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 1px;
