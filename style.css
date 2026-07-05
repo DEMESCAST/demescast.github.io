@@ -13,6 +13,7 @@ body {
     background: #0f0f15;
     color: #e0e0e0;
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 .container {
@@ -276,6 +277,7 @@ nav {
     text-decoration: none;
     color: inherit;
     overflow: hidden;
+    break-inside: avoid;
 }
 
 .ep-thumb {
@@ -383,28 +385,75 @@ footer {
 }
 
 @media (max-width: 600px) {
+    .container {
+        padding: 0 16px;
+    }
+
     .hero h1 {
-        font-size: 40px;
-        letter-spacing: 4px;
+        font-size: 32px;
+        letter-spacing: 2px;
     }
 
     .hero-sub {
-        font-size: 16px;
+        font-size: 14px;
+    }
+
+    .hero-apresentam {
+        font-size: 13px;
+    }
+
+    .hero-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 260px;
+        text-align: center;
+        padding: 12px 24px;
+        font-size: 14px;
     }
 
     .nav-links {
-        gap: 16px;
+        gap: 10px;
     }
 
     .nav-links a {
-        font-size: 12px;
+        font-size: 10px;
+        letter-spacing: 0.5px;
+    }
+
+    .logo {
+        font-size: 16px;
+        letter-spacing: 2px;
     }
 
     .episodios-grid {
         grid-template-columns: 1fr;
     }
 
+    .ep-thumb {
+        height: 200px;
+    }
+
     .nav-social {
         display: none;
+    }
+
+    .section {
+        padding: 48px 0;
+    }
+
+    .section-title {
+        font-size: 24px;
+        letter-spacing: 2px;
+        margin-bottom: 32px;
+    }
+
+    .contato-links {
+        flex-direction: column;
+        gap: 16px;
     }
 }
