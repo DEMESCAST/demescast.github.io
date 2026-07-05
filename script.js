@@ -21,14 +21,16 @@ async function fetchJogos() {
     }
 
     try {
-        const res = await fetch('https://api.football-data.org/v4/matches', {
-            headers: { 'X-Auth-Token': FOOTBALL_API_KEY }
+        const proxy = 'https://corsproxy.io/?';
+        const url = `https://api.football-data.org/v4/matches?api_key=${FOOTBALL_API_KEY}`;
+        const res = await fetch(proxy + encodeURIComponent(url), {
+            headers: { 'Accept': 'application/json' }
         });
         if (!res.ok) throw new Error(`Erro ${res.status}`);
         const data = await res.json();
         renderJogos(data.matches || []);
     } catch (e) {
-        grid.innerHTML = `<div class="pitch-empty">Erro ao carregar jogos: ${e.message}</div>`;
+        grid.innerHTML = `<div class="pitch-empty">Erro ao carregar jogos: ${e.message}. <button onclick="fetchJogos()" style="background:#3cb4ff;color:#0f0f15;border:none;padding:8px 16px;border-radius:6px;cursor:pointer;font-weight:600;margin-top:8px;">Tentar novamente</button></div>`;
     }
 }
 
