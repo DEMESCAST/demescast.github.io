@@ -3,7 +3,6 @@ const episodios = [
     { num: "EP.59", titulo: "SUZANE BORGES", desc: "Bate-papo com a empresária e especialista em turismo Suzane Borges, proprietária da agência Tairú.", link: "https://www.youtube.com/watch?v=PGOIE_d81jc", thumb: "https://img.youtube.com/vi/PGOIE_d81jc/hqdefault.jpg", data: "28 Abr 2026" },
     { num: "EP.55", titulo: "MARCELA RANGEL", desc: "Bate-papo com Marcela Rangel, diretora do Instituto Dom Barreto.", link: "https://www.youtube.com/watch?v=SpaA-YEM3z8&t=4244s", thumb: "https://img.youtube.com/vi/SpaA-YEM3z8/hqdefault.jpg", data: "31 Mar 2026" },
     { num: "EP.49", titulo: "ALLINE VASCONCELOS", desc: "Bate-papo com a influenciadora e jornalista Alline Vasconcelos sobre os assuntos mais comentados do momento.", link: "https://www.youtube.com/watch?v=bOxzCcRePlU", thumb: "https://img.youtube.com/vi/bOxzCcRePlU/hqdefault.jpg", data: "24 Fev 2026" },
-    { num: "EP.44", titulo: "DÉBORA FACCHINETTI", desc: "A escritora Débora Facchinetti retorna ao podcast para falar sobre o lançamento do seu novo livro.", link: "https://www.youtube.com/watch?v=FbkRgjKvisM", thumb: "https://img.youtube.com/vi/FbkRgjKvisM/hqdefault.jpg", data: "20 Jan 2026" },
 ];
 
 const grid = document.getElementById('episodios-grid');
