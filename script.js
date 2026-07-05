@@ -3,10 +3,6 @@ const episodios = [
     { num: "EP.64", titulo: "DRA. GIORDANA PORTELA", desc: "Conversa com a Dra. Giordana Portela sobre saúde e bem-estar.", link: "https://www.youtube.com/watch?v=EEN6ZjJ8pqY", thumb: "https://img.youtube.com/vi/EEN6ZjJ8pqY/hqdefault.jpg", data: "23 Jun 2026" },
     { num: "EP.63", titulo: "MAURÍCIO CARVALHO", desc: "Bate-papo com Maurício Carvalho sobre sua trajetória e experiências.", link: "https://www.youtube.com/watch?v=xHUiFE8el34", thumb: "https://img.youtube.com/vi/xHUiFE8el34/hqdefault.jpg", data: "16 Jun 2026" },
     { num: "EP.62", titulo: "MARCELO DIAS", desc: "Conversa com Marcelo Dias sobre sua carreira e histórias inspiradoras.", link: "https://www.youtube.com/watch?v=qGaq19GocBE", thumb: "https://img.youtube.com/vi/qGaq19GocBE/hqdefault.jpg", data: "09 Jun 2026" },
-    { num: "EP.60", titulo: "ANTONIO LENT", desc: "Bate-papo com Antonio Lent sobre sua trajetória profissional.", link: "https://www.youtube.com/watch?v=R4yVD3cv0Yg", thumb: "https://img.youtube.com/vi/R4yVD3cv0Yg/hqdefault.jpg", data: "26 Mai 2026" },
-    { num: "EP.59", titulo: "SUZANE BORGES", desc: "Bate-papo com a empresária e especialista em turismo Suzane Borges.", link: "https://www.youtube.com/watch?v=PGOIE_d81jc", thumb: "https://img.youtube.com/vi/PGOIE_d81jc/hqdefault.jpg", data: "28 Abr 2026" },
-    { num: "EP.58", titulo: "MARI MOURA", desc: "Conversa com Mari Moura sobre sua trajetória e projetos.", link: "https://www.youtube.com/watch?v=IlWvPYMYgFE", thumb: "https://img.youtube.com/vi/IlWvPYMYgFE/hqdefault.jpg", data: "21 Abr 2026" },
-    { num: "EP.55", titulo: "MARCELA RANGEL", desc: "Bate-papo com Marcela Rangel, diretora do Instituto Dom Barreto.", link: "https://www.youtube.com/watch?v=SpaA-YEM3z8&t=4244s", thumb: "https://img.youtube.com/vi/SpaA-YEM3z8/hqdefault.jpg", data: "31 Mar 2026" },
 ];
 
 const grid = document.getElementById('episodios-grid');
