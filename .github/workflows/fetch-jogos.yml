@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Buscar jogos da API
         run: |
-          curl -s "https://api.football-data.org/v4/matches?api_key=ea7017ad5fee423aba954573c238e31c" \
+          curl -s "https://api.football-data.org/v4/competitions/BSA/matches?api_key=ea7017ad5fee423aba954573c238e31c" \
             -H "Accept: application/json" -o jogos-data.json
       - name: Commitar se houver mudancas
         run: |

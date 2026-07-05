@@ -1,10 +1,5 @@
 const leagues = [
     { code: 'BSA', name: 'Brasileirão' },
-    { code: 'PL', name: 'Premier League' },
-    { code: 'PD', name: 'La Liga' },
-    { code: 'SA', name: 'Serie A' },
-    { code: 'BL1', name: 'Bundesliga' },
-    { code: 'CL', name: 'Champions' },
 ];
 
 async function fetchJogos() {
