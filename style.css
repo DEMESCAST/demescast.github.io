@@ -113,7 +113,7 @@ nav {
     content: '';
     position: absolute;
     inset: 0;
-    background: url('hero-bg.jpg') center / cover no-repeat;
+    background: url('hero-bg.jpg') center top / cover no-repeat;
     opacity: 0.25;
 }
 
