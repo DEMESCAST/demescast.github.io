@@ -234,12 +234,15 @@ nav {
 }
 
 .ep-card {
+    display: block;
     background: #1a1a24;
     border: 1px solid rgba(60, 180, 255, 0.1);
     border-radius: 12px;
     padding: 24px;
     transition: all .2s;
     cursor: pointer;
+    text-decoration: none;
+    color: inherit;
 }
 
 .ep-card:hover {

@@ -7,13 +7,15 @@ const episodios = [
 const grid = document.getElementById('episodios-grid');
 
 episodios.forEach(ep => {
-    const card = document.createElement('div');
+    const card = document.createElement('a');
+    card.href = 'https://www.youtube.com/@demescast/podcasts';
+    card.target = '_blank';
     card.className = 'ep-card';
     card.innerHTML = `
         <div class="ep-num">${ep.num}</div>
         <h3>${ep.titulo}</h3>
         <p>${ep.desc}</p>
-        <a href="https://www.youtube.com/@demescast/podcasts" target="_blank" class="ep-link">Assistir →</a>
+        <span class="ep-link">Assistir →</span>
     `;
     grid.appendChild(card);
 });
