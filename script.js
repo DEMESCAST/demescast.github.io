@@ -1,14 +1,14 @@
 const episodios = [
-    { num: "EP.59", titulo: "SUZANE BORGES", desc: "Bate-papo com a empresária e especialista em turismo Suzane Borges, proprietária da agência Tairú." },
-    { num: "EP.44", titulo: "DÉBORA FACCHINETTI", desc: "A escritora Débora Facchinetti retorna ao podcast para falar sobre o lançamento do seu novo livro." },
-    { num: "EP.27", titulo: "DRIELLE BERTO E MARCOS VINÍCIUS", desc: "Uma conversa esclarecedora sobre a Doença de Crohn com dois convidados especiais." },
+    { num: "EP.59", titulo: "SUZANE BORGES", desc: "Bate-papo com a empresária e especialista em turismo Suzane Borges, proprietária da agência Tairú.", link: "https://www.youtube.com/watch?v=PGOIE_d81jc" },
+    { num: "EP.44", titulo: "DÉBORA FACCHINETTI", desc: "A escritora Débora Facchinetti retorna ao podcast para falar sobre o lançamento do seu novo livro.", link: "https://www.youtube.com/watch?v=FbkRgjKvisM" },
+    { num: "EP.27", titulo: "DRIELLE BERTO E MARCOS VINÍCIUS", desc: "Uma conversa esclarecedora sobre a Doença de Crohn com dois convidados especiais.", link: "https://www.youtube.com/watch?v=zStjlP39tfI" },
 ];
 
 const grid = document.getElementById('episodios-grid');
 
 episodios.forEach(ep => {
     const card = document.createElement('a');
-    card.href = 'https://www.youtube.com/@demescast/podcasts';
+    card.href = ep.link;
     card.target = '_blank';
     card.className = 'ep-card';
     card.innerHTML = `
