@@ -1,0 +1,54 @@
+name: Buscar Episódios
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Instalar yt-dlp
+        run: pip install yt-dlp
+
+      - name: Buscar episódios
+        run: |
+          yt-dlp --flat-playlist --dump-json \
+            "https://www.youtube.com/@demescast/videos" 2>/dev/null | \
+            jq -s '[.[] | select(.title | test("^EP\\.")) | .upload_date as $ud |
+              {num: (.title | capture("^(?<n>EP\\.\\d+)").n),
+               titulo: (.title | capture("^EP\\.\\d+\\s*[-–]?\\s*(?<t>.+)").t // .title),
+               desc: "",
+               link: ("https://www.youtube.com/watch?v=" + .id),
+               videoId: .id,
+               data: (if $ud then ($ud | strptime("%Y%m%d") | mktime | strftime("%d %b %Y")) else "" end)}]' > episodios-data.json
+
+      - name: Buscar shorts
+        run: |
+          yt-dlp --flat-playlist --dump-json \
+            "https://www.youtube.com/@demescast/shorts" 2>/dev/null | \
+            jq -s '[.[] | {id: .id, titulo: .title,
+              link: ("https://youtube.com/shorts/" + .id)}]' > shorts-data.json
+
+      - name: Fallback se vazio
+        run: |
+          if [ ! -s episodios-data.json ] || [ "$(cat episodios-data.json)" = "[]" ]; then
+            echo '[{"num":"EP.65","titulo":"MARIANA MAAD","desc":"","link":"https://www.youtube.com/watch?v=itPi6tukl-Q","videoId":"itPi6tukl-Q","data":"30 Jun 2026"}]' > episodios-data.json
+          fi
+          if [ ! -s shorts-data.json ] || [ "$(cat shorts-data.json)" = "[]" ]; then
+            echo '[]' > shorts-data.json
+          fi
+
+      - name: Commitar se houver mudancas
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add episodios-data.json shorts-data.json
+          git diff --cached --quiet || git commit -m "Atualiza dados de episodios [automated]"
+          git push
