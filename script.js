@@ -26,14 +26,9 @@ function getStatusInfo(match) {
     if (s === 'AWARDED') return { label: 'W.O.', cls: 'finished' };
     if (s === 'TIMED' || s === 'SCHEDULED') {
         const d = new Date(match.utcDate);
-        const now = new Date();
-        const diff = (d - now) / 1000 / 86400;
         const time = d.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', timeZone: 'America/Sao_Paulo' });
-        if (diff > 1) {
-            const date = d.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit', timeZone: 'America/Sao_Paulo' });
-            return { label: `${date} ${time}`, cls: 'scheduled' };
-        }
-        return { label: time, cls: 'scheduled' };
+        const date = d.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit', timeZone: 'America/Sao_Paulo' });
+        return { label: `${date} ${time}`, cls: 'scheduled' };
     }
     return { label: s, cls: '' };
 }
