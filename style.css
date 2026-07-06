@@ -780,12 +780,16 @@ footer {
     }
 
     .nav-links {
-        gap: 10px;
+        gap: 6px;
     }
 
     .nav-links a {
         font-size: 10px;
         letter-spacing: 0.5px;
+    }
+
+    .nav-right {
+        gap: 16px;
     }
 
     .logo {
