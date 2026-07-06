@@ -73,7 +73,7 @@ function renderCards(matches, filter) {
         const showScore = status.cls === 'live' || status.cls === 'finished' || status.cls === 'paused';
         const scoreHTML = showScore
             ? `<div class="pitch-score ${status.cls}">${homeScore} × ${awayScore}</div>`
-            : `<div class="pitch-score">${status.label}</div>`;
+            : `<div class="pitch-score scheduled">×</div>`;
 
         return `
             <div class="pitch-card" style="animation-delay:${i * 0.06}s">
